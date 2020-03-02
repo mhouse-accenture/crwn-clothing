@@ -1,9 +1,8 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { shallow, mount, render } from 'enzyme';
 import App from './App';
+import Header from './components/header/header.component';
 
 test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  expect(shallow(<App />).find(<Header></Header>)).toBe('foo');
 });
